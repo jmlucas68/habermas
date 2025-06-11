@@ -10,3 +10,8 @@
 /.vs/habermas/CopilotIndices/17.14.734.62261/SemanticSymbols.db-shm
 /.vs/habermas/CopilotIndices/17.14.734.62261/SemanticSymbols.db-wal
 *.vsidx
+/.vs/habermas/config/applicationhost.config
+/.vs/habermas/v17/.wsuo
+/.vs/habermas/v17/DocumentLayout.json
+/.vs/VSWorkspaceState.json
+/.vs/slnx.sqlite-journal
