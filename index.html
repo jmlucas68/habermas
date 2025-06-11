@@ -1,0 +1,502 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jürgen Habermas: Razón, Diálogo y Esfera Pública</title>
+    <style>
+        /* --- FUENTES DE GOOGLE --- */
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+        /* --- VARIABLES DE COLOR Y ESTILOS GLOBALES --- */
+        :root {
+            --color-primario: #0d1b2a;
+            --color-secundario: #1b263b;
+            --color-terciario: #415a77;
+            --color-texto: #e0e1dd;
+            --color-acento: #ffc300;
+            --fuente-titulos: 'Merriweather', serif;
+            --fuente-cuerpo: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--fuente-cuerpo);
+            background-color: var(--color-primario);
+            color: var(--color-texto);
+            line-height: 1.7;
+        }
+
+        /* --- ENCABEZADO Y NAVEGACIÓN --- */
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(rgba(13, 27, 42, 0.8), rgba(13, 27, 42, 0.8)), url('https://raw.githubusercontent.com/jmlucas68/filosofos/refs/heads/main/images/Habermas.jpg');
+            background-size: cover;
+            background-position: center 20%;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+            .hero h1 {
+                font-family: var(--fuente-titulos);
+                font-size: 4rem;
+                margin-bottom: 20px;
+                color: white;
+                text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            }
+
+            .hero p {
+                font-size: 1.5rem;
+                font-weight: 300;
+                max-width: 800px;
+                color: var(--color-texto);
+            }
+
+            .hero .arrow-down {
+                margin-top: 40px;
+                font-size: 3rem;
+                color: var(--color-acento);
+                animation: bounce 2s infinite;
+            }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        nav {
+            background-color: var(--color-secundario);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            nav a {
+                color: var(--color-texto);
+                text-decoration: none;
+                font-weight: 700;
+                padding: 5px 10px;
+                border-radius: 5px;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+                nav a:hover {
+                    background-color: var(--color-acento);
+                    color: var(--color-primario);
+                }
+
+        /* --- CONTENEDOR PRINCIPAL Y SECCIONES --- */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--color-terciario);
+        }
+
+            section:last-of-type {
+                border-bottom: none;
+            }
+
+        h2 {
+            font-family: var(--fuente-titulos);
+            font-size: 2.8rem;
+            color: var(--color-acento);
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 2px solid var(--color-terciario);
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            font-family: var(--fuente-titulos);
+            font-size: 1.8rem;
+            color: white;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- ESTILOS ESPECÍFICOS --- */
+        .bio-flex {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+            .bio-flex img {
+                max-width: 250px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            }
+
+        blockquote {
+            background-color: var(--color-secundario);
+            border-left: 5px solid var(--color-acento);
+            padding: 20px;
+            margin: 25px 0;
+            font-size: 1.2rem;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+
+            blockquote cite {
+                display: block;
+                margin-top: 15px;
+                font-style: normal;
+                font-weight: 700;
+                text-align: right;
+                color: var(--color-terciario);
+            }
+
+        .influencias-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+            .influencias-grid ul {
+                list-style-type: '✓ ';
+                padding-left: 20px;
+            }
+
+            .influencias-grid li {
+                margin-bottom: 10px;
+                font-size: 1.1rem;
+            }
+
+        .obras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .obra-card {
+            background-color: var(--color-secundario);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+            .obra-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            }
+
+            .obra-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+        .obra-card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .obra-card h4 {
+            font-family: var(--fuente-titulos);
+            font-size: 1.3rem;
+            color: var(--color-acento);
+        }
+
+        .obra-card .year {
+            font-size: 0.9rem;
+            color: var(--color-terciario);
+            margin-bottom: 10px;
+        }
+
+        .obra-card p {
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+
+        .obra-card a {
+            display: inline-block;
+            background-color: var(--color-acento);
+            color: var(--color-primario);
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+            .obra-card a:hover {
+                background-color: #ffd60a;
+            }
+
+        .fuentes-list {
+            list-style: none;
+        }
+
+            .fuentes-list li {
+                background-color: var(--color-secundario);
+                margin-bottom: 10px;
+                padding: 15px;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+
+                .fuentes-list li:hover {
+                    background-color: var(--color-terciario);
+                }
+
+            .fuentes-list a {
+                color: var(--color-acento);
+                text-decoration: none;
+                font-weight: 700;
+            }
+
+                .fuentes-list a:hover {
+                    text-decoration: underline;
+                }
+
+            .fuentes-list span {
+                color: var(--color-texto);
+                display: block;
+                font-size: 0.9rem;
+            }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: var(--color-terciario);
+        }
+
+        /* --- RESPONSIVIDAD --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+
+            .bio-flex {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .influencias-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Jürgen Habermas</h1>
+        <p>El filósofo de la razón comunicativa, el diálogo y la democracia deliberativa.</p>
+        <a href="#biografia" aria-label="Ir al contenido principal">
+            <div class="arrow-down">↓</div>
+        </a>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#biografia">Biografía</a></li>
+            <li><a href="#contexto">Contexto</a></li>
+            <li><a href="#pensamiento">Pensamiento</a></li>
+            <li><a href="#influencias">Influencias</a></li>
+            <li><a href="#obras">Obras Principales</a></li>
+            <li><a href="#fuentes">Fuentes</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <section id="biografia">
+            <h2>Biografía</h2>
+            <div class="bio-flex">
+                <img src="https://raw.githubusercontent.com/jmlucas68/filosofos/refs/heads/main/images/Habermas.jpg" alt="Retrato de Jürgen Habermas">
+                <div>
+                    <p>Jürgen Habermas (Düsseldorf, 18 de junio de 1929) es uno de los filósofos y sociólogos más influyentes de la segunda mitad del siglo XX y principios del XXI. Su vida y obra están profundamente marcadas por la historia alemana, especialmente por la experiencia del nazismo y la posterior reconstrucción democrática.</p>
+                    <p>Miembro de la segunda generación de la <strong>Escuela de Frankfurt</strong>, Habermas se distanció del pesimismo de sus maestros (Adorno, Horkheimer) para proponer una teoría social basada en la capacidad humana para la comunicación y el entendimiento racional. Su trabajo abarca la filosofía política, la ética, la teoría social, la sociología y la teoría del derecho.</p>
+                    <p>A lo largo de su carrera, ha sido un intelectual público de primer orden, participando activamente en los debates más importantes de Alemania y Europa, defendiendo siempre el proyecto de la Ilustración y la necesidad de una esfera pública crítica y una democracia robusta.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contexto">
+            <h2>Contexto Histórico y Filosófico</h2>
+            <p>El pensamiento de Habermas no puede entenderse sin su contexto. Nació en la República de Weimar, vivió su adolescencia bajo el Tercer Reich y se formó intelectualmente en la Alemania de la posguerra. Esta experiencia lo llevó a una pregunta central: <strong>¿Cómo fue posible la catástrofe nazi y cómo se puede construir una sociedad democrática estable que impida su repetición?</strong></p>
+            <p>Filosóficamente, se inserta en la tradición de la <strong>Teoría Crítica</strong> de la Escuela de Frankfurt, cuyo objetivo era analizar las patologías de la sociedad moderna capitalista. Sin embargo, mientras la primera generación se centró en la "dialéctica de la Ilustración" (cómo la razón se vuelve instrumental y dominadora), Habermas buscó rescatar el potencial emancipador de la razón, localizándolo no en la conciencia individual, sino en el <strong>lenguaje y la comunicación intersubjetiva</strong>.</p>
+        </section>
+
+        <section id="pensamiento">
+            <h2>Pensamiento y Conceptos Clave</h2>
+
+            <h3>Teoría de la Acción Comunicativa</h3>
+            <p>Es el núcleo de su obra. Habermas distingue entre la <strong>acción instrumental</strong> (orientada al éxito y al control del mundo) y la <strong>acción comunicativa</strong> (orientada al entendimiento mutuo). Sostiene que la base de la sociedad no es el conflicto o el cálculo egoísta, sino la capacidad de los individuos para coordinar sus acciones a través del diálogo, buscando un consenso basado en los mejores argumentos.</p>
+            <blockquote>
+                "El entendimiento es el telos (fin) inmanente al lenguaje humano. [...] Con cada acto de habla orientado al entendimiento, hablante y oyente levantan pretensiones de validez y suponen que pueden ser justificadas."
+                <cite>– Teoría de la acción comunicativa, Vol. I</cite>
+            </blockquote>
+
+            <h3>La Esfera Pública (Öffentlichkeit)</h3>
+            <p>Habermas revitalizó este concepto. La esfera pública es un espacio social (no necesariamente físico) donde los ciudadanos se reúnen para debatir libremente sobre asuntos de interés común. Es el lugar donde se forma la opinión pública crítica que puede controlar al poder político y económico. Para Habermas, una esfera pública sana, libre de la colonización del dinero y el poder, es vital para la democracia.</p>
+            <blockquote>
+                "La esfera pública puede ser descrita como una red para la comunicación de contenidos y tomas de postura, es decir, de opiniones; en ella los flujos de comunicación son filtrados y sintetizados de tal suerte que se condensan en opiniones públicas agavilladas en torno a temas específicos."
+                <cite>– Facticidad y validez</cite>
+            </blockquote>
+
+            <h3>Ética del Discurso</h3>
+            <p>A partir de su teoría comunicativa, desarrolla una ética procedimental. Una norma moral es válida solo si todos los afectados por ella pueden aceptar libremente las consecuencias y efectos secundarios que se derivarían de su cumplimiento general. La validez no proviene de una autoridad externa (Dios, la tradición), sino del consenso racional alcanzado en un diálogo libre de coacción, donde solo prevalece "la fuerza del mejor argumento".</p>
+            <blockquote>
+                "Sólo pueden pretender validez aquellas normas que pudiesen contar con el asentimiento de todos los afectados como participantes en un discurso práctico."
+                <cite>– Conciencia moral y acción comunicativa</cite>
+            </blockquote>
+
+        </section>
+
+        <section id="influencias">
+            <h2>Influencias Recibidas y Ejercidas</h2>
+            <div class="influencias-grid">
+                <div>
+                    <h3>Influencias Recibidas</h3>
+                    <ul>
+                        <li><strong>Immanuel Kant:</strong> La primacía de la razón, el universalismo moral y el proyecto de la Ilustración.</li>
+                        <li><strong>G.W.F. Hegel:</strong> La dialéctica y el reconocimiento intersubjetivo.</li>
+                        <li><strong>Karl Marx:</strong> La crítica al capitalismo y a las relaciones de dominación.</li>
+                        <li><strong>Max Weber:</strong> El análisis de la racionalización y la burocracia en la modernidad.</li>
+                        <li><strong>Adorno y Horkheimer:</strong> La Teoría Crítica como punto de partida y de crítica.</li>
+                        <li><strong>G.H. Mead y Wittgenstein:</strong> El giro lingüístico y la importancia del lenguaje en la construcción de la realidad social.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Influencia Ejercida</h3>
+                    <ul>
+                        <li><strong>Axel Honneth:</strong> Su sucesor en la Escuela de Frankfurt, desarrolló la "Teoría del Reconocimiento".</li>
+                        <li><strong>Nancy Fraser:</strong> Crítica feminista y teórica de la justicia global que dialoga y discute con sus conceptos.</li>
+                        <li><strong>Teoría Política:</strong> Su idea de "democracia deliberativa" ha influido en todo el mundo.</li>
+                        <li><strong>Derecho:</strong> Su obra "Facticidad y Validez" es una referencia en la teoría del derecho democrático.</li>
+                        <li><strong>Sociología, Comunicación, Ética:</strong> Sus conceptos son herramientas fundamentales en múltiples disciplinas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="obras">
+            <h2>Obras Principales</h2>
+            <p>Encontrar versiones libres y legales en español de Habermas es muy difícil. La mayoría están protegidas por derechos de autor. A continuación, se ofrecen enlaces a tiendas online (principalmente Amazon España) para adquirir las traducciones oficiales.</p>
+            <div class="obras-grid">
+
+                <div class="obra-card">
+                    <div class="obra-card-content">
+                        <h4>Historia y crítica de la opinión pública</h4>
+                        <span class="year">(1962)</span>
+                        <p>Su tesis de habilitación. Un estudio fundamental sobre el surgimiento, la transformación y el declive de la esfera pública burguesa.</p>
+                        <a href="https://www.amazon.es/historia-cr%C3%ADtica-opini%C3%B3n-p%C3%BAblica-Estructuras/dp/8425218211" target="_blank" rel="noopener noreferrer">Ver en Amazon</a>
+                    </div>
+                </div>
+
+                <div class="obra-card">
+                    <div class="obra-card-content">
+                        <h4>Teoría de la acción comunicativa</h4>
+                        <span class="year">(1981)</span>
+                        <p>Su obra magna. Desarrolla su concepto central de la acción comunicativa y la racionalidad, y una teoría de la sociedad en dos niveles (sistema y mundo de la vida).</p>
+                        <a href="https://www.amazon.es/Teor%C3%ADa-acci%C3%B3n-comunicativa-Racionalidad-sociedad/dp/8430603411" target="_blank" rel="noopener noreferrer">Ver en Amazon (Vol. I)</a>
+                    </div>
+                </div>
+
+                <div class="obra-card">
+                    <div class="obra-card-content">
+                        <h4>Conciencia moral y acción comunicativa</h4>
+                        <span class="year">(1983)</span>
+                        <p>Aquí expone de manera sistemática los fundamentos de su ética del discurso, dialogando con la psicología moral de Kohlberg y la ética de Kant.</p>
+                        <a href="https://www.amazon.es/Conciencia-acci%C3%B3n-comunicativa-Estructuras-Procesos/dp/8476652458" target="_blank" rel="noopener noreferrer">Ver en Amazon</a>
+                    </div>
+                </div>
+
+                <div class="obra-card">
+                    <div class="obra-card-content">
+                        <h4>Facticidad y validez</h4>
+                        <span class="year">(1992)</span>
+                        <p>Una monumental obra sobre la filosofía del derecho y la teoría democrática, que busca reconciliar la tensión entre las normas legales (validez) y la realidad social (facticidad).</p>
+                        <a href="https://www.amazon.es/Facticidad-validez-discursiva-derecho-democr%C3%A1tico/dp/8498797529" target="_blank" rel="noopener noreferrer">Ver en Amazon</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="fuentes">
+            <h2>Fuentes y Enlaces de Interés</h2>
+            <ul class="fuentes-list">
+                <li>
+                    <a href="https://es.wikipedia.org/wiki/J%C3%BCrgen_Habermas" target="_blank" rel="noopener noreferrer">Jürgen Habermas en Wikipedia</a>
+                    <span>Artículo enciclopédico muy completo con biografía, resumen de sus ideas y bibliografía. Un excelente punto de partida.</span>
+                </li>
+                <li>
+                    <a href="https://plato.stanford.edu/entries/habermas/" target="_blank" rel="noopener noreferrer">Habermas en la Stanford Encyclopedia of Philosophy (en inglés)</a>
+                    <span>Análisis académico profundo y riguroso de su pensamiento, escrito por expertos en la materia.</span>
+                </li>
+                    <a href="https://archive.org/search?query=creator%3A%22Habermas%2C+J%C3%BCrgen%22" target="_blank" rel="noopener noreferrer">Búsqueda en Archive.org</a>
+                    <span>Resultados de búsqueda en Archive.org. Ocasionalmente se pueden encontrar textos o conferencias, principalmente en alemán o inglés.</span>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Página creada con HTML y CSS puro. Diseño y contenido por una IA en 2023.</p>
+    </footer>
+
+</body>
+</html>
